@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nusaku">
-        <activity android:name=".Activity.RegisterActivity"></activity>
+        <activity android:name=".Activity.IntroSliderActivity"></activity>
+        <activity android:name=".Activity.SplashActivity" />
+        <activity android:name=".Activity.RegisterActivity" />
         <activity
             android:name=".Activity.DashboardActivity"
             android:label="@string/title_activity_dashboard" />
