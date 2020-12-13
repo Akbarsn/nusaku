@@ -4,4 +4,14 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+    <!--intro slider-->
+    <string name="big_Title_1">Kenali Nusantara Lebih Jauh</string>
+    <string name="big_Title_2">Situs Budaya di Kotamu</string>
+    <string name="big_Title_3">Ragam Budaya Daerahmu</string>
+
+    <string name="desc_intro1">Lewat posting budaya, anda bisa mendapat wawasan tentang budaya-budaya daerah dari tempat lain.</string>
+    <string name="desc_intro2">Berbagi cerita tentang situs budaya di kotamu, Indonesia kaya akan sejarah dan budaya, melestarikan budaya dengan cara yang baru. </string>
+    <string name="desc_intro3">Bagikan momen kebudayaan dengan orang-orang, kontribusi anda melestarikan budaya daerah.</string>
+
 </resources>
