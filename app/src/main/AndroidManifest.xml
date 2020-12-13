@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.psi.nusaku">
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,17 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nusaku">
-
-        <activity android:name=".Activity.IntroSliderActivity"></activity>
-<!--        <activity android:name=".Activity.SplashActivity" />-->
+        <activity android:name=".Activity.ui.profile.EditPost"></activity>
+        <activity android:name=".Activity.DetailPost" />
+        <activity android:name=".Activity.IntroSliderActivity" /> <!-- <activity android:name=".Activity.SplashActivity" /> -->
         <activity android:name=".Activity.RegisterActivity" />
         <activity
             android:name=".Activity.DashboardActivity"
             android:label="@string/title_activity_dashboard" />
-        <activity android:name=".Activity.PostingActivity"></activity>
+        <activity android:name=".Activity.PostingActivity" />
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -27,4 +27,9 @@ class SharedPref (context: Context) {
         var email = preferences.getString(constant.SESSION_EMAIL, "")
         return User(username, email)
     }
+
+    fun Clear() {
+        val editor = preferences.edit()
+        editor.clear()
+    }
 }

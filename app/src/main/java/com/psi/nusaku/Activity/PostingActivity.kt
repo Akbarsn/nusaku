@@ -64,7 +64,6 @@ class PostingActivity : AppCompatActivity(){
         btnSubmit.setOnClickListener(){
             var namaBudaya = etNamaBudaya.text.toString()
             var lokasi = etLokasiBudaya.text.toString()
-            //gambar
             var deskripsi = etDeskripsiBudaya.text.toString()
             if(namaBudaya!=null && lokasi!=null && deskripsi!=null){
                 tambahBarang(namaBudaya,lokasi,deskripsi)
