@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/ic_google_circle" />
+        android:src="@drawable/nusaku_logo" />
     <LinearLayout
         android:layout_marginTop="280dp"
         android:orientation="vertical"
