@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
         android:layout_height="420dp"
         android:background="@drawable/bg_register"
@@ -20,102 +23,95 @@
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginTop="237dp"
-            app:cardCornerRadius="10dp">
 
-            <LinearLayout
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.7"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_nama_budaya"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-                    <EditText
-                        android:id="@+id/et_nama_budaya"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="18dp"
-                        android:layout_marginRight="18dp"
-                        android:background="@drawable/border_input"
-                        android:hint="nama budaya/cagar budaya/ adat"
-                        android:inputType="text"
-                        android:padding="10dp"
-                        />
-                    <EditText
-                        android:id="@+id/et_lokasi_budaya"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginLeft="18dp"
-                        android:layout_marginRight="18dp"
-                        android:background="@drawable/border_input"
-                        android:hint="lokasi budaya/cagar budaya/ adat"
-                        android:inputType="text"
-                        android:padding="10dp"
-                        />
-                <Button
-                    android:id="@+id/btn_upload_img"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"
-                    android:drawableRight="@drawable/ic_gallery"
-                    android:backgroundTint="@color/white"
-                    android:textAlignment="textStart"
-                    android:text="Upload gambar"
-                    android:textColor="@color/grey"
-                    android:textAllCaps="false"
-                    android:padding="10dp"
-                    />
-                <Button
-                    android:id="@+id/btn_datepicker"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"
-                    android:drawableRight="@drawable/ic_date"
-                    android:backgroundTint="@color/white"
-                    android:textAlignment="textStart"
-                    android:text="Tanggal"
-                    android:textColor="@color/grey"
-                    android:textAllCaps="false"
-                    android:padding="10dp"
-                    />
-                <EditText
-                    android:id="@+id/et_textarea"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginRight="18dp"
-                    android:layout_marginBottom="18dp"
-                    android:background="@drawable/border_input"
-                    android:hint="deskripsi.."
-                    android:inputType="text|textMultiLine"
-                    android:padding="10dp"
-                    />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_gravity="bottom"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/orange"
-            android:text="Daftar"
-            android:textSize="18sp"
-            android:textAllCaps="false"/>
-    </LinearLayout>
-</RelativeLayout>
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/border_input"
+                android:hint="Nama budaya/cagar budaya/ adat"
+                android:inputType="text"
+                android:padding="10dp"
+                />
+            <EditText
+                android:id="@+id/et_lokasi_budaya"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/border_input"
+                android:hint="lokasi budaya/cagar budaya/ adat"
+                android:inputType="text"
+                android:padding="10dp"
+                />
+            <Button
+                android:id="@+id/btn_upload_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:drawableRight="@drawable/ic_gallery"
+                android:backgroundTint="@color/white"
+                android:textAlignment="textStart"
+                android:text="Upload gambar"
+                android:textColor="@color/grey"
+                android:textAllCaps="false"
+                android:padding="10dp"
+                />
+            <ImageView
+                android:id="@+id/img_showUpload"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"/>
+            <EditText
+                android:id="@+id/et_textarea"
+                android:gravity="start|top"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="18dp"
+                android:background="@drawable/border_input"
+                android:hint="deskripsi.."
+                android:inputType="text|textMultiLine"
+                android:padding="10dp"
+                />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/btn_postBudaya"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/orange"
+        android:text="Daftar"
+        android:textSize="18sp"
+        android:textAllCaps="false"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

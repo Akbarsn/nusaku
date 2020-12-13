@@ -8,8 +8,8 @@ import com.google.firebase.firestore.QuerySnapshot
 class DashboardRepo {
     private val firebaseFirestore : FirebaseFirestore = FirebaseFirestore.getInstance()
     fun getPostlist(): Task<QuerySnapshot> {
-        return firebaseFirestore.collection("Posting")
-            .orderBy("Posting", Query.Direction.DESCENDING)
+        return firebaseFirestore.collection("posts")
+            .orderBy("tanggal", Query.Direction.DESCENDING)
             .get()
     }
 }
