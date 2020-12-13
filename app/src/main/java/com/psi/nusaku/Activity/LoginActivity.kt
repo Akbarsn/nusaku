@@ -7,6 +7,7 @@ import android.util.Log
 import android.util.Log.d
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -28,8 +29,8 @@ class LoginActivity : AppCompatActivity() {
     lateinit var etEmail: EditText;
     lateinit var etPassword: EditText;
     lateinit var btnLogin: Button
-    lateinit var btnLoginGoogle: Button
-    lateinit var btnIntentRegister: Button
+//    lateinit var btnLoginGoogle: Button
+    lateinit var btnIntentRegister: TextView
     lateinit var preferences: SharedPref
     private lateinit var mGoogleSignInClient: GoogleSignInClient
     private lateinit var gso: GoogleSignInOptions
@@ -38,9 +39,10 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        supportActionBar?.hide()
 
         btnLogin = findViewById(R.id.btn_login)
-        btnLoginGoogle = findViewById(R.id.btn_loginWithGoogle)
+//        btnLoginGoogle = findViewById(R.id.btn_loginWithGoogle)
         btnIntentRegister = findViewById(R.id.btn_intentRegister)
         etEmail = findViewById(R.id.et_inputEmail)
         etPassword = findViewById(R.id.et_inputPassword)
@@ -72,9 +74,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        btnLoginGoogle.setOnClickListener {
-            signInGoogle()
-        }
+//        btnLoginGoogle.setOnClickListener {
+//            signInGoogle()
+//        }
     }
 
     private fun signInGoogle() {
