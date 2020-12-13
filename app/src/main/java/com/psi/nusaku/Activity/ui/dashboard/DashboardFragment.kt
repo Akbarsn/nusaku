@@ -2,6 +2,7 @@ package com.psi.nusaku.Activity.ui.dashboard
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,7 +23,7 @@ import com.psi.nusaku.R
 
 class DashboardFragment : Fragment() {
 
-    lateinit var btnTambah : Button
+    lateinit var btnTambahPost : Button
     private lateinit var dashboardViewModel: DashboardViewModel
     lateinit var rvPosting: RecyclerView
     private lateinit var  dashboardRepo : DashboardRepo
@@ -48,8 +49,8 @@ class DashboardFragment : Fragment() {
         //loadPostData()
         rvPosting = view.findViewById(R.id.rv_posting)
         dashboardRepo = DashboardRepo()
-        btnTambah = view.findViewById(R.id.btn_tambah)
-        btnTambah.setOnClickListener(){
+        btnTambahPost = view.findViewById(R.id.btn_tambahPost)
+        btnTambahPost.setOnClickListener(){
             val intent = Intent (getActivity(), PostingActivity::class.java)
             getActivity()?.startActivity(intent)
         }
@@ -64,6 +65,7 @@ class DashboardFragment : Fragment() {
                 dashboardAdapter.notifyDataSetChanged()
             }
             .addOnFailureListener{
+                Log.e("Dashboard", "Error, $it")
             }
     }
 }
