@@ -8,47 +8,47 @@
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:orientation="vertical">
-<!--gambar hanya contoh-->
         <ImageView
-            android:id="@+id/img_post"
+            android:id="@+id/img_detailBudaya"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bg_profile">
+            android:layout_height="wrap_content">
         </ImageView>
         <TextView
-            android:id="@+id/tv_post_name2"
+            android:id="@+id/tv_detailJudul"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="70dp"
             android:text="Wayang Kulit"
             android:textColor="@android:color/white"
-            android:textSize="40sp"
+            android:textSize="32sp"
             android:textStyle="bold" />
     </RelativeLayout>
     <LinearLayout
         android:layout_marginTop="270dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tv_post_name"
-            android:drawableLeft="@drawable/ic_location_pin"
-            android:layout_width="wrap_content"
-            android:layout_margin="15dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/grey"
-            android:textSize="18sp"
-            android:text="Surakarta, Jawa Tengah"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
 
         <TextView
-            android:id="@+id/tv_date"
-            android:layout_margin="15dp"
+            android:id="@+id/tv_detailLokasi"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_margin="8dp"
+            android:drawableLeft="@drawable/ic_location_pin"
+            android:text="Surakarta, Jawa Tengah"
+            android:textColor="@color/grey"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_detailTanggal"
+            android:layout_margin="8dp"
             android:drawableLeft="@drawable/ic_clock"
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:textColor="@color/grey"
-            android:textSize="18sp"
+            android:textSize="14sp"
             android:textAlignment="textEnd"
             android:text="07/12/2020"/>
     </LinearLayout>
@@ -58,7 +58,7 @@
     android:layout_marginTop="320dp">
 <!--text hanya contoh-->
     <TextView
-        android:id="@+id/tv_content_post"
+        android:id="@+id/tv_detailDeskripsi"
         android:layout_width="wrap_content"
         android:layout_margin="15dp"
         android:layout_height="wrap_content"
