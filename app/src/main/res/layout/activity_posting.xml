@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#000000">
+
+    <TextView
+        android:id="@+id/txt_JudulPosting"
+        android:layout_width="134dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="80dp"
+        android:text="Bagikan Momen Kebudayaan"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_inputNamaBudaya"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Nama Budaya"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_JudulPosting" />
+
+    <EditText
+        android:id="@+id/et_inputLokasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Lokasi Budaya"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_inputNamaBudaya" />
+
+    <EditText
+        android:id="@+id/et_namaGambar"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="5dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="Upload Gambar"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/btn_tambahGambar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_inputLokasi" />
+
+    <EditText
+        android:id="@+id/et_deskripsiBudaya"
+        android:layout_width="0dp"
+        android:layout_height="205dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Deskripsi Budaya"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_namaGambar" />
+
+    <Button
+        android:id="@+id/btn_tambahGambar"
+        android:layout_width="0dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="64dp"
+        android:backgroundTint="@color/orange"
+        android:text="+"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/et_namaGambar"
+        app:layout_constraintTop_toBottomOf="@+id/et_inputLokasi" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="409dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/orange"
+        android:text="Tambah Budaya"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_postingKembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/orange"
+        android:tint="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/abc_vector_test" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

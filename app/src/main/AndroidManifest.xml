@@ -13,6 +13,7 @@
         <activity
             android:name=".Activity.DashboardActivity"
             android:label="@string/title_activity_dashboard" />
+        <activity android:name=".Activity.PostingActivity"></activity>
         <activity android:name=".Activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
