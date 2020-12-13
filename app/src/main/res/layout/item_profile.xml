@@ -17,10 +17,10 @@
         android:id="@+id/tv_date"
         android:layout_marginLeft="10dp"
         android:drawableLeft="@drawable/ic_clock"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:textColor="@color/grey"
         android:textSize="18sp"
         android:textAlignment="textEnd"
-        android:text=" 07/12/2020"/>
+        android:text="07/12/2020"/>
 </LinearLayout>
