@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.RegisterActivity">
     <ImageView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:src="@drawable/nusaku_logo" />
     <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         android:layout_width="match_parent"
         android:layout_height="420dp"
         android:background="@drawable/bg_register"
@@ -19,124 +24,128 @@
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="130dp"
+            android:layout_marginTop="90dp"
             android:text="Bagikan Momen Budaya daerah"
             android:textColor="@android:color/white"
             android:textSize="50sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-        <androidx.cardview.widget.CardView
-            android:layout_width="370dp"
-            android:layout_height="310dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="320dp"
-            app:cardCornerRadius="10dp">
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.75"
+        android:layout_width="340dp"
+        android:layout_height="310dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="60dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/et_RinputFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="60dp"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/et_RinputFullName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="18dp"
-                        android:background="@drawable/border_input"
-                        android:hint="Masukkan nama lengkapmu disini"
-                        android:inputType="text"
-                        android:padding="10dp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/et_RinputEmail"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="18dp"
-                        android:background="@drawable/border_input"
-                        android:hint="Masukkan emailmu disini"
-                        android:inputType="text"
-                        android:padding="10dp"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <EditText
-                        android:id="@+id/et_RinputPassword"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="18dp"
-                        android:background="@drawable/border_input"
-                        android:hint="Masukkan passwordmu disini"
-                        android:inputType="textPassword"
-                        android:padding="10dp"
-                        />
-                </LinearLayout>
+                    android:layout_margin="18dp"
+                    android:background="@drawable/border_input"
+                    android:hint="Masukkan nama lengkapmu disini"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    />
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="12dp"
-                android:text="Register"
-                android:textColor="@color/black"
-                android:textSize="40sp"
-                android:textStyle="bold" />
-        </androidx.cardview.widget.CardView>
-        <LinearLayout
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_marginLeft="100dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Sudah punya akun?"
-                android:textColor="@color/grey"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/btn_intentLogin"
-                android:layout_width="wrap_content"
-                android:clickable="true"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="Login"
-                android:textColor="@color/orange"
-                android:textStyle="bold"
-                android:textAlignment="center" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_marginTop="10dp"
-            android:backgroundTint="@color/orange"
-            android:text="Daftar"
-            android:textSize="18sp"
-            android:textAllCaps="false"/>
+                <EditText
+                    android:id="@+id/et_RinputEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="18dp"
+                    android:background="@drawable/border_input"
+                    android:hint="Masukkan emailmu disini"
+                    android:inputType="text"
+                    android:padding="10dp"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/et_RinputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="18dp"
+                    android:background="@drawable/border_input"
+                    android:hint="Masukkan passwordmu disini"
+                    android:inputType="textPassword"
+                    android:padding="10dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="12dp"
+            android:text="Register"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah punya akun?"
+            android:textColor="@color/grey"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/btn_intentLogin"
+            android:layout_width="wrap_content"
+            android:clickable="true"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:text="Login"
+            android:textColor="@color/orange"
+            android:textStyle="bold"
+            android:textAlignment="center" />
     </LinearLayout>
-</RelativeLayout>
+
+    <Button
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/btn_register"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/orange"
+        android:text="Daftar"
+        android:textSize="18sp"
+        android:textAllCaps="false"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
