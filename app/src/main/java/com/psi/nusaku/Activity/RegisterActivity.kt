@@ -41,14 +41,8 @@ class RegisterActivity : AppCompatActivity() {
 
             mAuth!!.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, OnCompleteListener { task ->
-                    Toast.makeText(
-                        this,
-                        "createUserWithEmail:onComplete" + task.isSuccessful,
-                        Toast.LENGTH_SHORT
-                    ).show()
-
                     if (!task.isSuccessful) {
-                        Toast.makeText(this, "User Not crated", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Registrasi Gagal", Toast.LENGTH_SHORT).show()
                         return@OnCompleteListener
                     } else {
                         val newUser = hashMapOf(
@@ -63,9 +57,12 @@ class RegisterActivity : AppCompatActivity() {
                                     "register",
                                     "Registrasi berhasil, tersimpan dengan ${documentReference.id}"
                                 )
+                                Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
+
                             }
                             .addOnFailureListener { error ->
                                 Log.e("register", "Registrasi gagal, ${error.message}")
+                                Toast.makeText(this, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
                             }
 
                         startActivity(Intent(this, LoginActivity::class.java))

@@ -61,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         btnLogin.setOnClickListener {
+            Toast.makeText(this, "Sedang diproses", Toast.LENGTH_SHORT).show()
             var email = etEmail.text.toString()
             var password = etPassword.text.toString()
 

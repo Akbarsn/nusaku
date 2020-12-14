@@ -37,7 +37,8 @@ class EditPost : AppCompatActivity() {
     lateinit var preferences: SharedPref
     private val PICK_IMAGE_REQUEST = 71
     private var filePath: Uri? = null
-    var imageURI = ""
+    var editImagePath = ""
+    var imageURIFirestore = "";
     private var firebaseStore: FirebaseStorage? = null
     private var storageReference: StorageReference? = null
     val sdf = SimpleDateFormat("dd/MMM/yyyy")
@@ -50,27 +51,27 @@ class EditPost : AppCompatActivity() {
         etJudul = findViewById(R.id.et_editJudul)
         etLokasi = findViewById(R.id.et_editLokasi)
         etDeskripsi = findViewById(R.id.et_editDeskripsi)
-        imgEdit = findViewById(R.id.img_editUpload)
-        btnUploadImage = findViewById(R.id.btn_editImg)
+//        imgEdit = findViewById(R.id.img_editUpload)
+//        btnUploadImage = findViewById(R.id.btn_editImg)
         btnSubmit = findViewById(R.id.btn_editBudaya)
 
         val judul = intent.getStringExtra("JUDUL")
         val lokasi = intent.getStringExtra("LOKASI")
         val deskripsi = intent.getStringExtra("DESKRIPSI")
-        val imageURI = intent.getStringExtra("GAMBAR")
+//        imageURIFirestore = intent.getStringExtra("GAMBAR")!!
 
         etJudul.setText(judul)
         etLokasi.setText(lokasi)
         etDeskripsi.setText(deskripsi)
-        Picasso.get().load(imageURI).into(imgEdit)
+//        Picasso.get().load(imageURIFirestore).into(imgEdit)
 
         preferences = SharedPref(this)
         db = FirebaseFirestore.getInstance()
         storageReference = FirebaseStorage.getInstance().reference
 
-        btnUploadImage.setOnClickListener() {
-            launchGallery()
-        }
+//        btnUploadImage.setOnClickListener() {
+//            launchGallery()
+//        }
 
         btnSubmit.setOnClickListener() {
             var namaBudaya = etJudul.text.toString()
@@ -110,7 +111,7 @@ class EditPost : AppCompatActivity() {
             })?.addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     val downloadUri = task.result
-                    imageURI = downloadUri.toString()
+                    editImagePath = downloadUri.toString()
                 } else {
                     Log.e("Image", "Gagal upload")
                 }
@@ -140,16 +141,8 @@ class EditPost : AppCompatActivity() {
     }
 
     fun updateBarang(namaBudaya: String, lokasi: String, deskripsi: String, judulAwal: String) {
-        var penulis = preferences.GetUser().username
         var tanggal = sdf.format(Date()).toString()
-        val newPost = hashMapOf(
-            "judul" to namaBudaya,
-            "tempat" to lokasi,
-            "deskripsi" to deskripsi,
-            "gambar" to imageURI,
-            "tanggal" to tanggal,
-            "penulis" to penulis
-        )
+        var tempImageURI = if (editImagePath != null) editImagePath else imageURIFirestore
         db.collection("posts")
             .whereEqualTo("judul", judulAwal)
             .get()
@@ -162,8 +155,6 @@ class EditPost : AppCompatActivity() {
                         lokasi,
                         "deskripsi",
                         deskripsi,
-                        "gambar",
-                        imageURI,
                         "tanggal",
                         tanggal,
                     ).addOnCompleteListener {

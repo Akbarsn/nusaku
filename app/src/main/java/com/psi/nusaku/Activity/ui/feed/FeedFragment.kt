@@ -40,7 +40,7 @@ class FeedFragment : Fragment() {
         loadPostData()
         rvPosting = view.findViewById(R.id.rv_feed)
         btnTambahPost = view.findViewById(R.id.btn_tambahPost)
-        btnTambahPost.setOnClickListener(){
+        btnTambahPost.setOnClickListener{
             val intent = Intent(getActivity(), PostingActivity::class.java)
             getActivity()?.startActivity(intent)
         }

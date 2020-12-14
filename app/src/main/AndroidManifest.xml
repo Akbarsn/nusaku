@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/nusaku_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/nusaku_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nusaku">
         <activity android:name=".Activity.ui.profile.EditPost"></activity>
